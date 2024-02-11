@@ -42,9 +42,6 @@ conversation = ConversationChain(
     memory=ConversationBufferMemory(ai_prefix="AI Assistant")
 )
 
-# conversation.predict(input="who is Gojo?")
-# conversation.predict(input="")
-
 while True:
     human = input()
     response = conversation.predict(input=human)
