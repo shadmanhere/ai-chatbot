@@ -12,6 +12,8 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
+from colorama import Fore, Back, Style
+
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Instantiate the LLM
@@ -43,6 +45,8 @@ conversation = ConversationChain(
 )
 
 while True:
+    print(Fore.CYAN + "Human response:" + Fore.LIGHTMAGENTA_EX)
     human = input()
     response = conversation.predict(input=human)
-    print(response)
+    print(Fore.CYAN + "AI response:")
+    print(Fore.LIGHTMAGENTA_EX + response)
